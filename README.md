@@ -1,5 +1,3 @@
-﻿
-
 Universidad de San Carlos de Guatemala
 
 Facultad de Ingeniería
