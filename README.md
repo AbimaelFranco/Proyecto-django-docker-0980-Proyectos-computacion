@@ -1,3 +1,5 @@
+![Image text](https://github.com/AbimaelFranco/Proyecto-django-docker-0980-Proyectos-computacion/blob/main/Readme-Pictures/ingenieria.JPG)
+
 Universidad de San Carlos de Guatemala
 
 Facultad de Ingeniería
@@ -25,22 +27,17 @@ Alexander Abimael Sanán Franco
 **DIAGRAMA UML**
 
 Se presenta el diagrama UML de la base de datos empleada para el proyecto.
-
+![Image text](https://github.com/AbimaelFranco/Proyecto-django-docker-0980-Proyectos-computacion/blob/main/Readme-Pictures/DBProyecto.png)
 
 
 
 
 **CAPTURAS DEL PROYECTO**
-
-
-
-
-
-
-
-
-
-
-
-
-
+![Image text](https://github.com/AbimaelFranco/Proyecto-django-docker-0980-Proyectos-computacion/blob/main/Readme-Pictures/Imagen1.png)
+![Image text](https://github.com/AbimaelFranco/Proyecto-django-docker-0980-Proyectos-computacion/blob/main/Readme-Pictures/Imagen2.png)
+![Image text](https://github.com/AbimaelFranco/Proyecto-django-docker-0980-Proyectos-computacion/blob/main/Readme-Pictures/Imagen3.png)
+![Image text](https://github.com/AbimaelFranco/Proyecto-django-docker-0980-Proyectos-computacion/blob/main/Readme-Pictures/Imagen4.png)
+![Image text](https://github.com/AbimaelFranco/Proyecto-django-docker-0980-Proyectos-computacion/blob/main/Readme-Pictures/Imagen5.png)
+![Image text](https://github.com/AbimaelFranco/Proyecto-django-docker-0980-Proyectos-computacion/blob/main/Readme-Pictures/Imagen6.png)
+![Image text](https://github.com/AbimaelFranco/Proyecto-django-docker-0980-Proyectos-computacion/blob/main/Readme-Pictures/Imagen7.png)
+![Image text](https://github.com/AbimaelFranco/Proyecto-django-docker-0980-Proyectos-computacion/blob/main/Readme-Pictures/Imagen8.png)
