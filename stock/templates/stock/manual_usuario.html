@@ -1,0 +1,288 @@
+{% extends "stock/base.html"%}
+
+{% load static %}
+{% block content %}
+    <!-- Start Banner Area -->
+	<section class="banner-area organic-breadcrumb">
+		<div class="container">
+			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+				<div class="col-first">
+					<h1>Manual de Usuario</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Banner Area -->
+	<br>
+
+        <!--================Blog Area =================-->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 blog_details" style="text-align: justify;">
+                    <h1>Manual de Usuario</h1>
+                    <p class="excert">
+                        Gracias por utilizar la tienda en línea de Kaori. En esta página encontraras todo lo necesario
+                        para poder navegar por nuestra tienda, así como para poder observar los distintos productos y
+                        adquirirlos.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <!--================Apartado 1=================-->
+        <section class="blog_area single-post-area section_gap">
+            <div class="container">
+                <div class="row">
+    
+                        
+    
+                        <div class="single-post row">
+    
+                            <div class="col-lg-12 col-md-12 blog_details" style="text-align: justify;">
+                                <a href="{% url 'Autenticacion' %}">
+                                    <h2>Registro</h2>
+                                </a>
+                                
+                                <p class="excert">
+                                    Primero deberas crear una cuenta, para lo cual debes ir a la sección de registro, en ésta 
+                                    página encontraras un formulario en el que se te solicitara nombre de usario, nombres, apellidos,
+                                    dirección de corre, contraseña y fotografía. Una vez completado el formulario el sistema registrara tu
+                                    usuario y podrás comenzar a comprar.
+                                </p>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="quotes">
+                                    <strong>Importante: </strong> Es necesario estar registrado para poder realizar compras en línea.
+                                </div>
+                            </div>  
+                        </div>
+
+
+                        <div class="single-post row">
+                            <div class="feature-img" style="width: 75%; margin-left: auto; margin-right: auto;">
+                                <img class="img-fluid img-responsive" src="{% static 'stock/img/manual/5.png'%}" alt="" >
+                            </div>
+                        </div>
+
+
+                </div>
+            </div>
+        </section>
+        <!--================Apartado 1=================-->
+
+        <!--================Apartado 2=================-->
+        <section class="blog_area single-post-area section_gap">
+            <div class="container">
+                <div class="row">
+    
+                        
+    
+                        <div class="single-post row">
+    
+                            <div class="col-lg-12 col-md-12 blog_details" style="text-align: justify;">
+                                <a href="{% url 'iniciar_sesion' %}">
+                                    <h2>Iniciar Sesión</h2>
+                                </a>
+                                
+                                <p class="excert">
+                                    Si ya cuentas con un perfil en KaoriShop puedes iniciar sesión en el apartado iniciar sesión y realizar tus compras.
+                                    Para iniciar sesión se te solicitara tu nombre de usuario y contraseña.
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="single-post row">
+                            <div class="feature-img" style="width: 75%; margin-left: auto; margin-right: auto;">
+                                <img class="img-fluid img-responsive" src="{% static 'stock/img/manual/4.png'%}" alt="" >
+                            </div>
+                        </div>
+
+
+                </div>
+            </div>
+        </section>
+        <!--================Apartado 2=================-->
+
+        <!--================Apartado 3=================-->
+        <section class="blog_area single-post-area section_gap">
+            <div class="container">
+                <div class="row">
+    
+                        
+    
+                        <div class="single-post row">
+    
+                            <div class="col-lg-12 col-md-12 blog_details" style="text-align: justify;">
+                                <a href="{% url 'reset_password'%}">
+                                    <h2>Recuperar Contraseña</h2>
+                                </a>
+                                
+                                <p class="excert">
+                                    Si olvidas tu contraseña puedes recuperarla en cualquier momento en el apartado "Recuperar Cuenta", en el que con tu correo electrónico
+                                    de usuario se te enviara un email para poder resetear tu contraseña y poder continuar usando tu cuenta.
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="single-post row">
+                            <div class="feature-img" style="width: 75%; margin-left: auto; margin-right: auto;">
+                                <img class="img-fluid img-responsive" src="{% static 'stock/img/manual/10.png'%}" alt="" >
+                            </div>
+                        </div>
+
+
+                </div>
+            </div>
+        </section>
+        <!--================Apartado 3=================-->
+
+        <!--================Apartado 4=================-->
+        <section class="blog_area single-post-area section_gap">
+            <div class="container">
+                <div class="row">
+    
+                        
+    
+                        <div class="single-post row">
+    
+                            <div class="col-lg-12 col-md-12 blog_details" style="text-align: justify;">
+                                <a>
+                                    <h2>Añadir Articulos a Carrito</h2>
+                                </a>
+                                
+                                <p class="excert">
+                                    Una vez te encuetres logeado puedras comenzar a añadir articulos a tu carrito, para lo cual puedes emplear las distintas opciones de compra.
+                                    Considera que únicamente podras añadir a carrito articulos con existencia en tienda.
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="single-post row">
+                            <div class="feature-img" style="width: 75%; margin-left: auto; margin-right: auto;">
+                                <img class="img-fluid img-responsive" src="{% static 'stock/img/manual/11.png'%}" alt="" >
+                            </div>
+                        </div>
+
+
+                </div>
+            </div>
+        </section>
+        <!--================Apartado 4=================-->
+
+        <!--================Apartado 5=================-->
+        <section class="blog_area single-post-area section_gap">
+            <div class="container">
+                <div class="row">
+    
+                        
+    
+                        <div class="single-post row">
+    
+                            <div class="col-lg-12 col-md-12 blog_details" style="text-align: justify;">
+                                <a href="{% url 'Carrito'%}">
+                                    <h2>Carrito</h2>
+                                </a>
+                                
+                                <p class="excert">
+                                    Conforme añadas articulos a tu carrito estos se iran cargando en la página "Carrito", en la cual podras editar la cantidad de artículos
+                                    y eliminar los que ya no desees. <br>
+                                    Una vez estes seguro de tus productos haz click en "Pagar" para iniciar el proceso de pago.
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="single-post row">
+                            <div class="feature-img" style="width: 75%; margin-left: auto; margin-right: auto;">
+                                <img class="img-fluid img-responsive" src="{% static 'stock/img/manual/12.png'%}" alt="" >
+                            </div>
+                        </div>
+
+
+                </div>
+            </div>
+        </section>
+        <!--================Apartado 5=================-->
+
+        <!--================Apartado 5=================-->
+        <section class="blog_area single-post-area section_gap">
+            <div class="container">
+                <div class="row">
+    
+                        
+    
+                        <div class="single-post row">
+    
+                            <div class="col-lg-12 col-md-12 blog_details" style="text-align: justify;">
+                                <a href="{% url 'Checkout'%}">
+                                    <h2>Checkout</h2>
+                                </a>
+                                
+                                <p class="excert">
+                                    En la página Checkout podras editar los detalles de tu factura, así mismo se presentara un resumen
+                                    de los articulos comprados y su cantidad, así como el total parcial y total de tu compra.<br>
+                                    Deberas elegir el método de pago y aceptar los términos y condiciones del servicio para proceder con tu compra.<br>
+                                    Una vez confirmes que toda la información es correcta haz click en "Proceder con el Pago" para finalizar tu compra.
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="single-post row">
+                            <div class="feature-img" style="width: 75%; margin-left: auto; margin-right: auto;">
+                                <img class="img-fluid img-responsive" src="{% static 'stock/img/manual/13.png'%}" alt="" >
+                            </div>
+                        </div>
+
+
+                </div>
+            </div>
+        </section>
+        <!--================Apartado 5=================-->
+
+        <!--================Apartado 5=================-->
+        <section class="blog_area single-post-area section_gap">
+            <div class="container">
+                <div class="row">
+    
+                        
+    
+                        <div class="single-post row">
+    
+                            <div class="col-lg-12 col-md-12 blog_details" style="text-align: justify;">
+                                <a href="{% url 'perfil'%}">
+                                    <h2>Resumen de Compras</h2>
+                                </a>
+                                
+                                <p class="excert">
+                                    Una vez realizado tu pago se añadira el registro de tu compra en la página "Perfil", en la que podrás
+                                    ver el historial de tus compras realizadas, el resumen de estas y el estado de tu pedido. Así mismo podrás
+                                    obtener un documento PDF con la misma información.
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="single-post row">
+                            <div class="feature-img" style="width: 75%; margin-left: auto; margin-right: auto;">
+                                <img class="img-fluid img-responsive" src="{% static 'stock/img/manual/14.png'%}" alt="" >
+                            </div>
+                        </div>
+
+
+                </div>
+            </div>
+        </section>
+        <!--================Apartado 5=================-->
+
+
+
+        <!--================Blog Area =================-->
+
+
+
+{% endblock %}

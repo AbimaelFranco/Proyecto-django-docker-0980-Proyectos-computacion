@@ -1,0 +1,49 @@
+{% extends "stock/base.html"%}
+
+{% load static %}
+{% block content %}
+    <!-- Start Banner Area -->
+	<section class="banner-area organic-breadcrumb">
+		<div class="container">
+			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+				<div class="col-first">
+					<h1>Contacto</h1>
+					<nav class="d-flex align-items-center">
+						<a href="{% url 'Home' %}">Home<span class="lnr lnr-arrow-right"></span></a>
+						<a href="{% url 'Contacto' %}">Contacto</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Banner Area -->
+	<hr>
+
+	<!--================Contact Area =================-->
+	<section class="contact_area section_gap_bottom">
+		<div class="container">
+			<div class="row justify-content-center">
+					<div class="contact_info">
+						<div class="info_item">
+							<i class="lnr lnr-home"></i>
+							<h6>Ciudad Universitaria, Guatemala</h6>
+							<p>Zona 12 ciudad de Guatemala</p>
+						</div>
+						<div class="info_item">
+							<i class="lnr lnr-phone-handset"></i>
+							<h6><a href="#">9889 5454</a></h6>
+							<p>Lunes a Viernes de 8am a 6 pm</p>
+						</div>
+						<div class="info_item">
+							<i class="lnr lnr-envelope"></i>
+							<h6><a href="#">soporte@kaorishop.com</a></h6>
+							<p>Disponible las 24h</p>
+						</div>
+					</div>
+			</div>
+		</div>
+	</section>
+	<!--================Contact Area =================-->
+	<hr>
+
+{% endblock %}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+
+<head>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body class="Bodyss">
+
+    <table style="max-width: 1000px; padding:10px; margin:0 auto; border-collapse: collapse;">
+        <!--<tr>
+            <td style="background-color: #ecf0f1; text-align: left ; padding: 0">
+                <a href="#">
+                    <img width="20%" style="display: block; margin:1.5% 3%" src="https://i.postimg.cc/FzYtkydh/common-banner2.png">
+                </a>
+            </td>
+        </tr>-->
+        <tr>
+            <td style="padding: 0;">
+                <img style="padding: 0; display:block" src="https://i.postimg.cc/mgJP7xrn/Encabezado-Factura.png" width="100%" class="img-fluid" alt="Responsive image">
+            </td>
+        </tr>
+        <tr>
+            <td style="background-color: #ecf0f1">
+                <div style="color: #34495e; margin:4% 10% 2%; text-align: justify; font-family: sans-serif">
+                    <h2 style="color: #e67e22; margin: 0 0 7px">Gracias por tu Compra</h2>
+                    <p class="lead">
+                        Hola {{nombreusuario}}.<br/>
+                        Gracias por tu compra, a conntinuación se adjunta el número de pedido y los artículos de tu compra:<br/>
+                        <br/>
+                        <strong>No. de Factura: </strong>{{pedido.id}}<br/>
+                        <br/>
+                        <strong>Artículos:</strong>
+                        <br/>
+                        {% for lineas_pedido in lineas_pedido %}
+                            {{lineas_pedido.producto}}
+                            {{lineas_pedido.cantidad}}
+                            <br/>
+                        {% endfor %}
+                    </p>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 0;">
+                <img style="padding: 0; display:block" src="https://i.postimg.cc/6QZy0H2p/Pie-Factura.png" width="100%" class="img-fluid" alt="Responsive image">
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+
+</html>

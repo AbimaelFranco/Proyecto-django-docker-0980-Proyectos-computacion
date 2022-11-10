@@ -1,0 +1,234 @@
+{% extends "stock/base.html"%}
+
+{% load static %}
+{% block content %}
+
+	<!-- Start Banner Area -->
+	<section class="banner-area organic-breadcrumb">
+		<div class="container">
+			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+				<div class="col-first">
+					<h1>Catálogo</h1>
+					<nav class="d-flex align-items-center">
+						<a href="{% url 'Home' %}">Home<span class="lnr lnr-arrow-right"></span></a>
+						<!--<a href="#">Shop<span class="lnr lnr-arrow-right"></span></a>-->
+						<a href="{% url 'Catalogo' %}">Catálogo</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Banner Area -->
+
+	<!-- Start Shop Area -->
+	<section class="lattest-product-area pb-40 category-list">
+		<!-- single product slide -->
+		<div class="single-product">
+			<div class="container">
+				<div class="row">
+					<!-- single product P1-->
+					<div class="col-lg-3 col-md-6">
+						<div class="single-product">
+							<img class="img-fluid" src="{% static 'stock/img/product/P1.png'%}" alt="">
+							<div class="product-details">
+								<a href="ProductDetails1.html">
+								<h6>Adidas NS45</h6>
+								<div class="price">
+									<h6>Q750.00</h6>
+									<h6 class="l-through">Q900.00</h6>
+								</div>
+								<div class="prd-bottom">
+									<a href="" class="social-info">
+										<span class="ti-bag"></span>
+										<p class="hover-text">Comprar</p>
+									</a>
+									<a href="ProductDetails1.html" class="social-info">
+										<span class="lnr lnr-move"></span>
+										<p class="hover-text">Detalles</p>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- single product P2-->
+					<div class="col-lg-3 col-md-6">
+						<div class="single-product">
+							<img class="img-fluid" src="{% static 'stock/img/product/P2.png'%}" alt="">
+							<div class="product-details">
+								<a href="ProductDetails2.html">
+								<h6>Nike SSR5</h6>
+								<div class="price">
+									<h6>Q800.00</h6>
+									<h6 class="l-through">Q1200.00</h6>
+								</div>
+								<div class="prd-bottom">
+									<a href="" class="social-info">
+										<span class="ti-bag"></span>
+										<p class="hover-text">Comprar</p>
+									</a>
+									<a href="ProductDetails2.html" class="social-info">
+										<span class="lnr lnr-move"></span>
+										<p class="hover-text">Detalles</p>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- single product P3-->
+					<div class="col-lg-3 col-md-6">
+						<div class="single-product">
+							<img class="img-fluid" src="{% static 'stock/img/product/P3.png'%}" alt="">
+							<div class="product-details">
+								<a href="ProductDetails3.html">
+								<h6>Adidas Lego Amarillo</h6>
+								<div class="price">
+									<h6>Q750.00</h6>
+									<h6 class="l-through">Q1300.00</h6>
+								</div>
+								<div class="prd-bottom">
+									<a href="" class="social-info">
+										<span class="ti-bag"></span>
+										<p class="hover-text">Comprar</p>
+									</a>
+									<a href="ProductDetails3.html" class="social-info">
+										<span class="lnr lnr-move"></span>
+										<p class="hover-text">Detalles</p>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- single product P4-->
+					<div class="col-lg-3 col-md-6">
+						<div class="single-product">
+							<img class="img-fluid" src="{% static 'stock/img/product/P4.png'%}" alt="">
+							<div class="product-details">
+								<a href="ProductDetails4.html">
+								<h6>Adidas Lego Negro</h6>
+								<div class="price">
+									<h6>Q800.00</h6>
+									<h6 class="l-through">Q1300.00</h6>
+								</div>
+								<div class="prd-bottom">
+									<a href="" class="social-info">
+										<span class="ti-bag"></span>
+										<p class="hover-text">Comprar</p>
+									</a>
+									<a href="ProductDetails4.html" class="social-info">
+										<span class="lnr lnr-move"></span>
+										<p class="hover-text">Detalles</p>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- single product slide -->
+		<div class="single-product">
+			<div class="container">
+				<div class="row">
+					<!-- single product P12-->
+					<div class="col-lg-3 col-md-6">
+						<div class="single-product">
+							<img class="img-fluid" src="{% static 'stock/img/product/P5.png'%}" alt="">
+							<div class="product-details">
+								<a href="ProductDetails5.html">
+								<h6>Rebook Ruby</h6>
+								<div class="price">
+									<h6>Q750.00</h6>
+									<h6 class="l-through">Q980.00</h6>
+								</div>
+								<div class="prd-bottom">
+									<a href="" class="social-info">
+										<span class="ti-bag"></span>
+										<p class="hover-text">Comprar</p>
+									</a>
+									<a href="ProductDetails5.html" class="social-info">
+										<span class="lnr lnr-move"></span>
+										<p class="hover-text">Detalles</p>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- single product P22-->
+					<div class="col-lg-3 col-md-6">
+						<div class="single-product">
+							<img class="img-fluid" src="{% static 'stock/img/product/P6.png'%}" alt="">
+							<div class="product-details">
+								<a href="ProductDetails6.html">
+								<h6>Nike Jordan Air</h6>
+								<div class="price">
+									<h6>Q950.00</h6>
+									<h6 class="l-through">Q1500.00</h6>
+								</div>
+								<div class="prd-bottom">
+									<a href="" class="social-info">
+										<span class="ti-bag"></span>
+										<p class="hover-text">Comprar</p>
+									</a>
+									<a href="ProductDetails6.html" class="social-info">
+										<span class="lnr lnr-move"></span>
+										<p class="hover-text">Detalles</p>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- single product P32-->
+					<div class="col-lg-3 col-md-6">
+						<div class="single-product">
+							<img class="img-fluid" src="{% static 'stock/img/product/P7.png'%}" alt="">
+							<div class="product-details">
+								<a href="ProductDetails7.html">
+								<h6>Nike Pegasus 38</h6>
+								<div class="price">
+									<h6>Q850.00</h6>
+									<h6 class="l-through">Q1300.00</h6>
+								</div>
+								<div class="prd-bottom">
+									<a href="" class="social-info">
+										<span class="ti-bag"></span>
+										<p class="hover-text">Comprar</p>
+									</a>
+									<a href="ProductDetails7.html" class="social-info">
+										<span class="lnr lnr-move"></span>
+										<p class="hover-text">Detalles</p>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- single product P42-->
+					<div class="col-lg-3 col-md-6">
+						<div class="single-product">
+							<img class="img-fluid" src="{% static 'stock/img/product/P8.png'%}" alt="">
+							<div class="product-details">
+								<a href="ProductDetails8.html">
+								<h6>Addidas Hammer</h6>
+								<div class="price">
+									<h6>Q750.00</h6>
+									<h6 class="l-through">Q1200.00</h6>
+								</div>
+								<div class="prd-bottom">
+									<a href="" class="social-info">
+										<span class="ti-bag"></span>
+										<p class="hover-text">Comprar</p>
+									</a>
+									<a href="ProductDetails8.html" class="social-info">
+										<span class="lnr lnr-move"></span>
+										<p class="hover-text">Detalles</p>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Shop Area -->
+
+{% endblock %}

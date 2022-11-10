@@ -1,0 +1,85 @@
+{% extends "stock/base.html"%}
+
+{% load static %}
+{% block content %}
+
+	<!-- Start Banner Area -->
+	<section class="banner-area organic-breadcrumb">
+		<div class="container">
+			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+				<div class="col-first">
+					<h1>Detalles de Producto</h1>
+					<nav class="d-flex align-items-center">
+						<a href="index.html">Home<span class="lnr lnr-arrow-right"></span></a>
+						<a href="category.html">Catálogo<span class="lnr lnr-arrow-right"></span></a>
+						<!--<a href="#">Shop<span class="lnr lnr-arrow-right"></span></a>-->
+						<a href="single-product.html">Detalles de Producto</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Banner Area -->
+
+	<br/>
+	<!--================Single Product Area =================-->
+	<div class="product_image_area">
+		<div class="container">
+			<div class="row s_product_inner">
+				<div class="col-lg-6">
+					<!--<div class="s_Product_carousel">-->
+						<div class="single-prd-item">
+							<img class="img-fluid" src="{{product.imagen.url}}" width="500 px" height="500 px" alt="">
+						</div>
+					<!--</div>-->
+				</div>
+				<div class="col-lg-5 offset-lg-1">
+					<div class="s_product_text">
+						<h3>{{product.nombre}}</h3>
+						{% if product.descuento != product.precio %}
+							<h2>Q{{product.descuento |stringformat:".2f"}}</h2>
+						{% else %}
+							<h2>Q{{product.precio |stringformat:".2f"}}</h2>
+						{% endif %}
+						<div class="single-product">
+							<div class="product-details">
+								<div class="price">
+									{% if product.descuento != product.precio %}
+									<h6 class="l-through">Q{{product.precio |stringformat:".2f"}}</h6>
+									{% else %}
+									{% endif %}
+								</div>
+							</div>
+						</div>
+						<ul class="list">
+							<li><a class="active"><span>Categoría</span> : {{product.categoria}}</a></li>
+							{% if product.cantidad > 0%}
+									<li><span>Disponibilidad</span> : {{product.cantidad}} artículos</li>
+							{% else %}
+								<li><span>Disponibilidad</span> : Sin existencias</li>
+							{% endif %}
+						</ul>
+						<p>{{product.descripcion}}.</p>
+						<div class="card_area d-flex align-items-center">
+							{% if product.cantidad > 0%}
+								{% if user.is_authenticated and user.is_staff is not True%}
+								<a class="primary-btn" href="{%url 'carro:agregar' product.id%}">Añadir al carrito</a>
+								{% else %}
+								<a class="primary-btn" >Administrador</a>
+								{% endif %}
+							{% else %}
+								<a class="primary-btn" >Agotado</a>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--================End Single Product Area =================-->
+	<br>
+	<br>
+	<br>
+
+
+{% endblock %}>

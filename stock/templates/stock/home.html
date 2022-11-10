@@ -1,0 +1,241 @@
+{% extends "stock/base.html"%}
+
+{% load static %}
+
+{% block content %}
+	<!-- start banner Area -->
+	<section class="banner-area">
+		<div class="container">
+			<div class="row fullscreen align-items-center justify-content-start">
+				<div class="col-lg-12">
+					<div class="active-banner-slider owl-carousel">
+						<!-- single-slide -->
+						<div class="row single-slide align-items-center d-flex">
+							<div class="col-lg-5 col-md-6">
+								<div class="banner-content">
+									<h1 id="Banner1">Sketchers <br>Adivity</h1>
+									<p>Conoce las nuevas zapatillas deportivas Sketchers Adivity, elaboradas
+										con la más alta tecnología, enfocados en el rendimiento y confort. Disponibles proximamente.</p>
+								</div>
+							</div>
+							<div class="col-lg-7">
+								<div class="banner-img">
+									<img class="img-fluid" src="{% static 'stock/img/banner/banner-img.png'%}" alt="">
+								</div>
+							</div>
+						</div>
+						<!-- single-slide -->
+						<div class="row single-slide align-items-center d-flex">
+							<div class="col-lg-5 col-md-6">
+								<div class="banner-content">
+									<h1 id="Banner2">Sketchers <br>Enigma</h1>
+									<p>Cómodas, ligeras y con estilo, estas y muchas más son las características de las zapatillas Sketchers Enigma. Disponibles proximamente.</p>
+								</div>
+							</div>
+							<div class="col-lg-7">
+								<div class="banner-img">
+									<img class="img-fluid" src="{% static 'stock/img/banner/banner-img2.png'%}" alt="">
+								</div>
+							</div>
+						</div>		
+						<!-- single-slide -->
+						<div class="row single-slide align-items-center d-flex">
+							<div class="col-lg-5 col-md-6">
+								<div class="banner-content">
+									<h1 id="Banner3">Sketchers <br>Voyage</h1>
+									<p>Si lo tuyo es el estilo y confort estas zapatillas son para ti, las Sketchers Voyage te ofrecen una gran experiencia en cada paso. Disponibles proximamente.</p>
+								</div>
+							</div>
+							<div class="col-lg-7">
+								<div class="banner-img">
+									<img class="img-fluid" src="{% static 'stock/img/banner/banner-img3.png'%}" alt="">
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End banner Area -->
+
+	<!-- start features Area -->
+	<section class="features-area section_gap">
+		<div class="container">
+			<div class="row features-inner">
+				<!-- single features -->
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-features">
+						<div class="f-icon">
+							<img src="{% static 'stock/img/features/f-icon1.png'%}" alt="">
+						</div>
+						<h6>Entrega Gratis</h6>
+					</div>
+				</div>
+				<!-- single features -->
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-features">
+						<div class="f-icon">
+							<img src="{% static 'stock/img/features/f-icon2.png'%}" alt="">
+						</div>
+						<h6>Política de Devoluciones</h6>
+					</div>
+				</div>
+				<!-- single features -->
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-features">
+						<div class="f-icon">
+							<img src="{% static 'stock/img/features/f-icon3.png'%}" alt="">
+						</div>
+						<h6>Suporte 24/7</h6>
+					</div>
+				</div>
+				<!-- single features -->
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-features">
+						<div class="f-icon">
+							<img src="{% static 'stock/img/features/f-icon4.png'%}" alt="">
+						</div>
+						<h6>Transacciones Seguras</h6>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- end features Area -->
+
+	<!-- Start category Area -->
+	<section class="category-area">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-6 text-center">
+					<div class="section-title">
+						<h1>Kaori te Acompaña</h1>
+					</div>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-lg-8 col-md-12">
+					<div class="row">
+						<div class="col-lg-8 col-md-8">
+							<div class="single-deal">
+								<div class="overlay"></div>
+								<img class="img-fluid w-100" src="{% static 'stock/img/category/c1.jpg'%}" alt="">
+								<a href="{% static 'stock/img/category/c1.jpg'%}" class="img-pop-up" target="_blank">
+									<div class="deal-details">
+										<h6 class="deal-title">Al estar con esa persona especial.</h6>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4">
+							<div class="single-deal">
+								<div class="overlay"></div>
+								<img class="img-fluid w-100" src="{% static 'stock/img/category/c2.jpg'%}" alt="">
+								<a href="{% static 'stock/img/category/c2.jpg'%}" class="img-pop-up" target="_blank">
+									<div class="deal-details">
+										<h6 class="deal-title">En los momentos difíciles.</h6>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-4">
+							<div class="single-deal">
+								<div class="overlay"></div>
+								<img class="img-fluid w-100" src="{% static 'stock/img/category/c3.jpg'%}" alt="">
+								<a href="{% static 'stock/img/category/c3.jpg'%}" class="img-pop-up" target="_blank">
+									<div class="deal-details">
+										<h6 class="deal-title">Al empezar un nuevo sueño.</h6>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="col-lg-8 col-md-8">
+							<div class="single-deal">
+								<div class="overlay"></div>
+								<img class="img-fluid w-100" src="{% static 'stock/img/category/c4.jpg'%}" alt="">
+								<a href="{% static 'stock/img/category/c4.jpg'%}" class="img-pop-up" target="_blank">
+									<div class="deal-details">
+										<h6 class="deal-title">En los momentos inolvidables.</h6>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End category Area -->
+
+
+	<!-- single product slide -->
+	<section class="lattest-product-area pb-40 category-list">
+		<!--Inicio de fila 4 items-->
+		<div class="single-product">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-lg-6 text-center">
+						<div class="section-title">
+							<h1>Nuestros Productos</h1>
+							<p>Conoce nuestros últimos productos ya disponibles para ti.</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					{%for arts in articulos %}
+					{% if arts.disponibilidad%}
+					<!-- Producto -->
+					<div class="col-lg-3 col-md-6">
+						<div class="single-product">
+							<img class="img-fluid" src="{{arts.imagen.url}}" alt="imagen {{arts.imagen.url}}" title="{{arts.nombre}}">
+							<div class="product-details">
+								<h6>{{arts.nombre}}</h6>
+								<div class="price">
+									<h6>Q{{arts.descuento |stringformat:".2f"}}</h6>
+									<h6 class="l-through">Q{{arts.precio |stringformat:".2f"}}</h6>
+								</div>
+								{% if arts.cantidad > 0%}
+									<p>En existencia: {{arts.cantidad}}</p>
+								{% else %}
+									<p>Sin existencias</p>
+								{% endif %}
+								<div class="prd-bottom">
+									{% if arts.cantidad > 0%}
+									{% if user.is_authenticated and user.is_staff is not True%}
+										<a href="{%url 'carro:agregar' arts.id%}" class="social-info">
+											<span class="ti-bag"></span>
+											<p class="hover-text">Comprar</p>
+										</a>
+									{% else %}
+										<a class="social-info">
+											<span class="ti-bag"></span>
+											<p class="hover-text">Admin</p>
+										</a>
+									{% endif %}
+									{% else %}
+									<a class="social-info">
+										<span class="ti-bag"></span>
+										<p class="hover-text">Agotado</p>
+									</a>
+									{% endif %}
+									<a href="{% url 'Producto' id=arts.id %}" class="social-info">
+										<span class="lnr lnr-move"></span>
+										<p class="hover-text">Detalles</p>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Fin Producto -->
+					{%endif%}
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		<!--Fin de fila 4 items-->
+	</section>
+	<!-- end product Area -->
+
+
+{% endblock %}

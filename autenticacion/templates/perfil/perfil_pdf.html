@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+
+<head>
+<!-- CSS only -->
+<!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">-->
+<style>
+
+    table {
+    border-collapse: collapse;
+    width: 100%;
+    }
+
+    td {
+    text-align: center;
+    }
+    th {
+    background-color: #FF940C;
+    color: white;
+    }
+    th, td {
+    padding: 4px 1px 1px 2px;
+    }
+    h1{
+        text-align: center;
+        font-size: 24px;
+    }
+    .datos{
+        font-size: 11px;
+    }
+</style>
+</head>
+    
+<body class="Bodyss">
+
+    <img style="padding: 0; display:block" src="https://i.postimg.cc/mgJP7xrn/Encabezado-Factura.png" width="100%" class="img-fluid" alt="Responsive image">
+    <!--================Contact Area =================-->
+    <p class="datos">
+        <b>Cliente:</b> {{user.username}} <br>
+        <b>Nombre:</b> {{user.first_name}} {{user.last_name}} <br>
+        <b>Correo:</b> {{user.email}}
+    </p>
+	<!--================Contact Area =================-->
+
+    <h1>Resumen de Compras</h1>
+
+	        <!--================Cart Area =================-->
+			<section class="cart_area">
+				<div class="container">
+					<div class="cart_inner">
+						<div class="table-responsive">
+							<table class="table" style="border: 1px solid;">
+								<thead>
+									<tr>
+										<th ><strong>No. de Factura</strong></th>
+										<th >Producto</th>
+										<th >Cantidad</th>
+										<th >Fecha de compra</th>
+										<th >Estado</th>
+									</tr>
+								</thead>
+								<tbody>                                
+	
+										{% for articulos_comprados in articulos_comprados %}
+											<!--================Inicio Producto Individual =================-->
+											<tr>
+												<td align="center">
+													<p>{{articulos_comprados.pedido_id}}</p>	
+												</td>
+												<td align="center">
+													{% for listado_todos_productos in listado_todos_productos %}
+														{% if articulos_comprados.producto_id == listado_todos_productos.id%}
+														<p>{{listado_todos_productos.nombre}}</p>
+														{% endif %}
+													{% endfor %}
+												</td>
+												<td align="center">
+													<p>{{articulos_comprados.cantidad}}</p>
+												</td>
+												<td align="center">
+													<p>{{articulos_comprados.created_at.date}}</p>
+												</td>
+												<td align="center">
+													{% for pedidos_comprados in pedidos_comprados %}
+														{% if pedidos_comprados.id == articulos_comprados.pedido_id %}
+															{% if pedidos_comprados.entregado is True %}
+																<h5>Entregado</h5>
+															{% else %}
+																<h5>En camino</h5>
+															{% endif %}
+														{% endif %}
+													{% endfor %}
+												</td>
+											</tr>
+											<!--================Fin Producto Individual =================-->
+										{% endfor %}
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--================End Cart Area =================-->
+            <img style="padding: 0; display:block" src="https://i.postimg.cc/6QZy0H2p/Pie-Factura.png" width="100%" class="img-fluid" alt="Responsive image">
+</body>

@@ -1,0 +1,148 @@
+{% extends "stock/base.html"%}
+
+{% load static %}
+{% block content %}
+
+	<!-- Start Banner Area -->
+	<section class="banner-area organic-breadcrumb">
+		<div class="container">
+			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+				<div class="col-first">
+					<h1>Checkout</h1>
+					<nav class="d-flex align-items-center">
+						<a href="{% url 'Home' %}">Home<span class="lnr lnr-arrow-right"></span></a>
+						<!--<a href="#">Shop<span class="lnr lnr-arrow-right"></span></a>-->
+						<a href="{% url 'Carrito' %}">Carrito<span class="lnr lnr-arrow-right"></span></a>
+                        <a href="{% url 'Checkout' %}">Checkout</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Banner Area -->
+    <br/>
+    {% if pedido_valido is not True %}
+        <tr>
+            <td colspan="4">
+                <div class="alert alert-danger text-center">
+                    Algunos productos exceden las cantidades disponibles en stock
+                </div>
+            </td>
+        </tr>
+    {% endif %}
+    <br/>
+    <!--================Checkout Area =================-->
+    <section class="checkout_area section_gap">
+        <div class="container">
+            <div class="billing_details">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h3>Detalles de factura</h3>
+                        {% for info_usuario in info_usuario%}
+                            {% if info_usuario.user_id == user.id %}
+                            <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+                                <div class="col-md-6 form-group p_star">
+                                    <input type="text" class="form-control" id="first" name="name" value="{{info_usuario.fisrt_name}}" placeholder="Nombre">
+                                </div>
+                                <div class="col-md-6 form-group p_star">
+                                    <input type="text" class="form-control" id="last" name="name" value="{{info_usuario.last_name}}" placeholder="Apellidos">
+                                </div>
+                                <div class="col-md-6 form-group p_star">
+                                    <input type="text" class="form-control" id="CUI" name="compemailany" value="{{info_usuario.cui}}" placeholder="CUI">
+                                </div>
+                                <div class="col-md-12 form-group p_star">
+                                    <input type="text" class="form-control" id="email" name="email" value="{{info_usuario.email}}" placeholder="Correo electrónico">
+                                </div>
+                                <div class="col-md-12 form-group p_star">
+                                    <select class="country_select">
+                                        <option value="1">Alta Verapaz</option>
+                                        <option value="2">Baja Verapaz</option>
+                                        <option value="3">Chimaltenango</option>
+                                        <option value="4">Chiquimula</option>
+                                        <option value="5">Guatemala</option>
+                                        <option value="6">El Progreso</option>
+                                        <option value="7">Escuintla</option>
+                                        <option value="8">Huehuetenango</option>
+                                        <option value="9">Izabal</option>
+                                        <option value="10">Jalapa</option>
+                                        <option value="11">Jutiapa</option>
+                                        <option value="12">Petén</option>
+                                        <option value="13">Quetzaltenango</option>
+                                        <option value="14">Quiché</option>
+                                        <option value="15">Retalhuleu</option>
+                                        <option value="16">Sacatepequez</option>
+                                        <option value="17">San Marcos</option>
+                                        <option value="18">Santa Rosa</option>
+                                        <option value="19">Sololá</option>
+                                        <option value="20">Suchitepequez</option>
+                                        <option value="21">Totonicapán</option>
+                                        <option value="22">Zacapa</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-12 form-group">
+                                    <div class="creat_account">
+                                        <h3>Detalles de entrega</h3>
+                                    </div>
+                                    <textarea class="form-control" name="message" id="message" rows="1" placeholder="Comentarios adicionales para la entrega."></textarea>
+                                </div>
+                            </form>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="order_box">
+                            <h2>Tu pedido</h2>
+                            <ul class="list">
+                                <li><a href="">Producto <span>Total</span></a></li>
+                                {% if request.session.carro.items %}
+                                {% for key, value in request.session.carro.items %}
+                                    <li><a>{{value.nombre}} x {{value.cantidad}}<span class="last">Q{{value.subtotal}}</span></a></li>
+                                {% endfor %}
+                                {% else %}
+                                    <tr>
+                                        <td colspan="4">
+                                            <div class="alert alert-danger text-center">
+                                                Sin productos en el carrito
+                                            </div>
+                                        </td>
+                                    </tr>
+                                {% endif %}
+                            </ul>
+                            <ul class="list list_2">
+                                <li><a href="#">Subtotal <span>Q{{importe_total_carro}}</span></a></li>
+                                <li><a href="#">Envio <span>Q 0.00</span></a></li>
+                                <li><a href="#">Total <span>Q{{importe_total_carro}}</span></a></li>
+                            </ul>
+                            <div class="payment_item">
+                                <div class="radion_btn">
+                                    <input type="radio" id="f-option5" name="selector">
+                                    <label for="f-option5">Tarjeta</label>
+                                    <img src="{% static 'stock/img/product/cards.png'%}" alt="">
+                                    <div class="check"></div>
+                                </div>
+                            </div>
+                            <div class="payment_item active">
+                                <div class="radion_btn">
+                                    <input type="radio" id="f-option6" name="selector">
+                                    <label for="f-option6">Paypal </label>
+                                    <img src="{% static 'stock/img/product/paypal.png'%}" alt="">
+                                    <div class="check"></div>
+                                </div>
+                            </div>
+                            <div class="creat_account">
+                                <input type="checkbox" id="f-option4" name="selector">
+                                <label for="f-option4">Acepto los </label>
+                                <a href="#">términos y condiciones*</a>
+                            </div>
+                            <a class="primary-btn" href="../pedidos">Proceder con el pago</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Checkout Area =================-->
+
+
+{% endblock %}

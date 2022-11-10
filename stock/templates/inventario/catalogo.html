@@ -1,0 +1,83 @@
+{% extends "stock/base.html"%}
+
+{% load static %}
+{% block content %}
+
+	<!-- Start Banner Area -->
+	<section class="banner-area organic-breadcrumb">
+		<div class="container">
+			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+				<div class="col-first">
+					<h1>Catálogo</h1>
+					<nav class="d-flex align-items-center">
+						<a href="{% url 'Home' %}">Home<span class="lnr lnr-arrow-right"></span></a>
+						<!--<a href="#">Shop<span class="lnr lnr-arrow-right"></span></a>-->
+						<a href="{% url 'Catalogo' %}">Catálogo</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Banner Area -->
+
+	<section class="lattest-product-area pb-40 category-list">
+		<!--Inicio de fila 4 items-->
+		<div class="single-product">
+			<div class="container">
+				<div class="row">
+					{%for arts in arts %}
+					{% if arts.disponibilidad%}
+					<!-- Producto -->
+					<div class="col-lg-3 col-md-6">
+						<div class="single-product">
+							<img class="img-fluid" src="{{arts.imagen.url}}" alt="imagen {{arts.imagen.url}}" title="{{arts.nombre}}"/>
+							<div class="product-details">
+								<h6>{{arts.nombre}}</h6>
+								<div class="price">
+									<h6>Q{{arts.descuento |stringformat:".2f"}}</h6>
+									{% if arts.descuento != arts.precio %}
+									<h6 class="l-through">Q{{arts.precio |stringformat:".2f"}}</h6>
+									{% endif %}
+								</div>
+								{% if arts.cantidad > 0%}
+									<p>En existencia: {{arts.cantidad}}</p>
+								{% else %}
+									<p>Sin existencias</p>
+								{% endif %}
+								<div class="prd-bottom">
+									{% if arts.cantidad > 0%}
+									{% if user.is_authenticated and user.is_staff is not True%}
+										<a href="{%url 'carro:agregar' arts.id%}" class="social-info">
+											<span class="ti-bag"></span>
+											<p class="hover-text">Comprar</p>
+										</a>
+									{% else %}
+										<a class="social-info">
+											<span class="ti-bag"></span>
+											<p class="hover-text">Admin</p>
+										</a>
+									{% endif %}
+									{% else %}
+									<a class="social-info">
+										<span class="ti-bag"></span>
+										<p class="hover-text">Agotado</p>
+									</a>
+									{% endif %}
+									<a href="{% url 'Producto' id=arts.id %}" class="social-info">
+										<span class="lnr lnr-move"></span>
+										<p class="hover-text">Detalles</p>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Fin Producto -->
+					{%endif%}
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		<!--Fin de fila 4 items-->
+	</section>
+
+{% endblock %}

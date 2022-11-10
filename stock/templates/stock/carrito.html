@@ -1,0 +1,203 @@
+{% extends "stock/base.html"%}
+
+{% load static %}
+{% block content %}
+
+	<!-- Start Banner Area -->
+	<section class="banner-area organic-breadcrumb">
+		<div class="container">
+			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+				<div class="col-first">
+					<h1>Carrito</h1>
+					<nav class="d-flex align-items-center">
+						<a href="{% url 'Home' %}">Home<span class="lnr lnr-arrow-right"></span></a>
+						<!--<a href="#">Shop<span class="lnr lnr-arrow-right"></span></a>-->
+						<a href="{% url 'Carrito' %}">Carrito</a>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Banner Area -->
+
+    {% if request.user.is_authenticated %}
+
+        <!--================Cart Area =================-->
+        <section class="cart_area">
+            <div class="container">
+                <div class="cart_inner">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Producto</th>
+                                    <th scope="col">Precio unitario</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Subotal</th>
+                                </tr>
+                            </thead>
+                            <tbody>                                
+
+                                {% if request.session.carro.items %}
+                                    {% for key, value in request.session.carro.items %}
+
+                                    <!--================Inicio Producto Individual =================-->
+                                    <tr>
+                                        <td>
+                                            <div class="media">
+                                                <div class="d-flex">
+                                                    <img src="{{value.imagen}}" alt="" style="width: 50px; ">
+                                                </div>
+                                                <div class="media-body">
+                                                    <p>{{value.nombre}}</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <h5>Q{{value.precio }}</h5>
+                                        </td>
+                                        <td>
+                                            <div class="product_count">
+                                                <input type="text" name="qty" id="sst" maxlength="12" value="{{value.cantidad}}" title="Quantity:"
+                                                    class="input-text qty">
+                                                <form action="{%url 'carro:agregar' value.producto_id%}">
+                                                    <button type="submit" class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
+                                                </form>
+                                                
+                                                {% if value.cantidad > 1%}
+                                                    <form action="{%url 'carro:restar' value.producto_id%}">
+                                                        <button type="submit" class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
+                                                    </form>
+                                                {% else %}
+                                                    <button type="submit" class="reduced items-count" type="button" data-toggle="modal" data-target="#exampleModal"><i class="lnr lnr-chevron-down"></i></button>
+                                                {%endif%}
+                                                
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <h5>Q{{value.subtotal}}</h5>
+                                        </td>
+                                    </tr>
+                                    <!--================Fin Producto Individual =================-->
+                                    <!--================INICIO MODAL =================-->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Confimarción de eliminación</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                ¿Ésta seguro de eliminar este producto de su carrito?
+                                                </div>
+                                                <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Regresar</button>
+                                                <form action="{%url 'carro:restar' value.producto_id%}">
+                                                    <button type="submit" type="button" class="btn btn-primary">Confirmar</button>
+                                                </form>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    <!--================FIN MODAL =================-->
+
+                                    {% endfor %}
+                                {% else %}
+                                    <tr>
+                                        <td colspan="4">
+                                            <div class="alert alert-danger text-center">
+                                                Sin productos en el carrito
+                                            </div>
+                                        </td>
+                                    </tr>
+                                {% endif %}
+
+
+                                <tr class="bottom_button">
+                                    <td>
+                                        <a class="gray_btn" href="{% url 'Carrito' %}">Actualizar carrito</a>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+                                        <div class="cupon_text d-flex align-items-center" style="float: right;">
+                                            <input type="text" placeholder="Código de cupón">
+                                            <a class="primary-btn" href="#">Aplicar</a>
+                                            <!--<a class="gray_btn" href="{% url 'Carrito' %}">Cancelar</a>-->
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+                                        <h5>Total</h5>
+                                    </td>
+                                    <td>
+                                        <h5>Q{{importe_total_carro}}</h5>
+                                    </td>
+                                </tr>
+                                <tr class="shipping_area">
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+                                        <h5>Envio</h5>
+                                    </td>
+                                    <td>
+                                        <div class="shipping_box">
+                                            <ul class="list">
+                                                <li class="active"><a>Gratis</a></li>
+                                            </ul>
+                                            
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="out_button_area">
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td>
+                                        <div class="checkout_btn_inner d-flex align-items-center" style="float: right;">
+                                            <a class="gray_btn" href="{% url 'Catalogo' %}">Volver a catálogo</a>
+                                            {% if request.session.carro.items %}
+                                                <a class="primary-btn" href="{% url 'Checkout' %}">Pagar</a>
+                                            {% endif %}
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================End Cart Area =================-->
+    
+    {% else %}
+        <br></br>
+        <div class="alert alert-danger text-center">Debe iniciar sesión</div>
+        <br></br>
+    {% endif %}
+
+
+{% endblock %}

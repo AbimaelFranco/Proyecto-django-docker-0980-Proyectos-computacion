@@ -1,0 +1,33 @@
+{% extends "stock/base.html"%}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+	<!-- Start Banner Area -->
+	<section class="banner-area organic-breadcrumb">
+		<div class="container">
+			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+				<div class="col-first">
+					<h1>Registro</h1>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Banner Area -->
+
+	<hr>
+    <div style="width: 50%; margin:auto;">
+        <form method="post" action="" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form|crispy}}
+			{{form2|crispy}}
+
+            <div class="col text-center">
+                <button class="btn btn-success regular-button">Registrarse</button>
+            </div>	
+        </form>
+    </div>
+	<hr>
+{% endblock %}

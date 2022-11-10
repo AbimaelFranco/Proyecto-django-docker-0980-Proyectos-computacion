@@ -1,0 +1,146 @@
+{% extends "stock/base.html"%}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+	<!-- Start Banner Area -->
+	<section class="banner-area organic-breadcrumb">
+		<div class="container">
+			<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+				<div class="col-first">
+						<h1>{{user.username.upper}}</h1>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Banner Area -->
+
+	<hr>
+
+
+	<!--------------------------------------------------------------------------------------------------->
+	<section class="vh-100" >
+		<div class="container py-5 h-100">
+		  <div class="row d-flex justify-content-center align-items-center h-100">
+			<div class="col col-lg-6 mb-4 mb-lg-0">
+			  <div class="card mb-3" style="border-radius: .5rem;">
+				<div class="row g-0">
+				  <div class="col-md-4 gradient-custom text-center text-white"
+					style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+					  {% for listado_usuarios in listado_usuarios%}
+						{% if listado_usuarios.user_id == user.id%}
+							<img src="{{listado_usuarios.profile_image.url}}" alt="Avatar" class="img-fluid my-5" style="width: 80px;">
+						{% else %}
+							<!--<img src="/media/users_pictures/default.png" alt="Avatar" class="img-fluid my-5" style="width: 80px;">-->
+						{% endif %}
+						{% endfor%}
+					<h5>{{user.username}}</h5>
+				  </div>
+				  <div class="col-md-8">
+					<div class="card-body p-4">
+					  <h6>Información</h6>
+					  <hr class="mt-0 mb-4">
+					  <div class="row pt-1">
+						<div class="col-6 mb-3">
+						  <h6>Nombres</h6>
+						  <p class="text-muted">{{user.first_name}}</p>
+						</div>
+						<div class="col-6 mb-3">
+						  <h6>Apellidos</h6>
+						  <p class="text-muted">{{user.last_name}}</p>
+						</div>
+					  </div>
+					  <!--<h6>Projects</h6>-->
+					  <!--<hr class="mt-0 mb-4">-->
+					  <div class="row pt-1">
+						<div class="col-8 mb-3">
+						  <h6>Email</h6>
+						  <p class="text-muted">{{user.email}}</p>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </section>
+	<!--------------------------------------------------------------------------------------------------->
+
+	<!--================Contact Area =================-->
+	
+	<!--================Contact Area =================-->
+
+	<br>
+	<div class=" col text-center">
+		<h1 style="text-align: center;">Resumen de Compras</h1>
+		<a class="primary-btn center" href="{% url 'perfil_pdf'%}">Resumen de compras en PDF</a>
+	</div>
+	        <!--================Cart Area =================-->
+			<section class="cart_area">
+				<div class="container">
+					<div class="cart_inner">
+						<div class="table-responsive">
+							<table class="table">
+								<thead>
+									<tr>
+										<th scope="col">No. de Factura</th>
+										<th scope="col">Producto</th>
+										<th scope="col">Cantidad</th>
+										<th scope="col">Fecha de compra</th>
+										<th scope="col">Estado</th>
+									</tr>
+								</thead>
+								<tbody>                                
+	
+										{% for articulos_comprados in articulos_comprados %}
+											{% if articulos_comprados.user_id == user.id%}
+											<!--================Inicio Producto Individual =================-->
+											<tr>
+												<td>
+													<h5>{{articulos_comprados.pedido_id}}</h5>	
+												</td>
+												<td>
+													{% for listado_todos_productos in listado_todos_productos %}
+														{% if articulos_comprados.producto_id == listado_todos_productos.id%}
+														<h5>{{listado_todos_productos.nombre}}</h5>
+														{% endif %}
+													{% endfor %}
+												</td>
+												<td>
+													<h5>{{articulos_comprados.cantidad}}</h5>
+												</td>
+												<td>
+													<h5>{{articulos_comprados.created_at.date}}</h5>
+												</td>
+												<td>
+													{% for pedidos_comprados in pedidos_comprados %}
+														{% if pedidos_comprados.id == articulos_comprados.pedido_id %}
+															{% if pedidos_comprados.entregado is True %}
+																<h5>Entregado</h5>
+															{% else %}
+																<h5>En camino</h5>
+															{% endif %}
+														{% endif %}
+													{% endfor %}
+												</td>
+											</tr>
+											<!--================Fin Producto Individual =================-->
+											{% endif %}
+										{% endfor %}
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!--================End Cart Area =================-->
+
+
+
+{% endblock %}
