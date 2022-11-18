@@ -1,4 +1,4 @@
-### Descripción del proyecto
+## Descripción del proyecto
 
 Una zapatería antigua quiere modernizar su sistema de inventario y ventas,
 dado que este no se encuentra digitalizado en ningún medio.
@@ -56,27 +56,41 @@ comprar, junto con ver sus ordenas pasadas y actuales en proceso.
 
 ---
 
-## DIAGRAMA UML
+## Descarga y ejecución
 
-Se presenta el diagrama UML de la base de datos empleada para el proyecto.
-![Image text](https://github.com/AbimaelFranco/Proyecto-django-docker-0980-Proyectos-computacion/blob/main/Readme-Pictures/DBProyecto.png)
+1. Abrir la terminal de su sistema en el directorio que desea trabajar.
+2. Descarge el repositorio con la instrucción: 
+``` gh repo clone AbimaelFranco/Proyecto-django-docker-0980-Proyectos-computacion ```
+3. Verifique las modificaciones en los modelos con el comando:
+```python manage.py makemigrations ```
+4. Realice las migraciones de los modelos a la base de datos:
+```python manage.py migrate ```
+5. Ejecute el proyecto por medio de la instrucción: 
+```python manage.py runserver ```
 
-
-
+---
 
 ## CAPTURAS DEL PROYECTO
-![Image text](https://github.com/AbimaelFranco/Proyecto-django-docker-0980-Proyectos-computacion/blob/main/Readme-Pictures/Imagen1.png)
+
+![Image text](https://github.com/AbimaelFranco/Proyecto-django-docker-0980-Proyectos-computacion/blob/main/Readme-Pictures/Home1.png)
+
+![Image text](https://github.com/AbimaelFranco/Proyecto-django-docker-0980-Proyectos-computacion/blob/main/Readme-Pictures/Home2.png)
+
+![Image text](https://github.com/AbimaelFranco/Proyecto-django-docker-0980-Proyectos-computacion/blob/main/Readme-Pictures/Imagen3.png)
 
 ![Image text](https://github.com/AbimaelFranco/Proyecto-django-docker-0980-Proyectos-computacion/blob/main/Readme-Pictures/Imagen2.png)
 
-![Image text](https://github.com/AbimaelFranco/Proyecto-django-docker-0980-Proyectos-computacion/blob/main/Readme-Pictures/Imagen3.png)
+![Image text](https://github.com/AbimaelFranco/Proyecto-django-docker-0980-Proyectos-computacion/blob/main/Readme-Pictures/Imagen1.png)
 
 ![Image text](https://github.com/AbimaelFranco/Proyecto-django-docker-0980-Proyectos-computacion/blob/main/Readme-Pictures/Imagen4.png)
 
 ![Image text](https://github.com/AbimaelFranco/Proyecto-django-docker-0980-Proyectos-computacion/blob/main/Readme-Pictures/Imagen5.png)
 
-![Image text](https://github.com/AbimaelFranco/Proyecto-django-docker-0980-Proyectos-computacion/blob/main/Readme-Pictures/Imagen6.png)
+![Image text](https://github.com/AbimaelFranco/Proyecto-django-docker-0980-Proyectos-computacion/blob/main/Readme-Pictures/Imagen8.png)
 
 ![Image text](https://github.com/AbimaelFranco/Proyecto-django-docker-0980-Proyectos-computacion/blob/main/Readme-Pictures/Imagen7.png)
 
-![Image text](https://github.com/AbimaelFranco/Proyecto-django-docker-0980-Proyectos-computacion/blob/main/Readme-Pictures/Imagen8.png)
+## DIAGRAMA UML
+
+Se presenta el diagrama UML de la base de datos empleada para el proyecto.
+![Image text](https://github.com/AbimaelFranco/Proyecto-django-docker-0980-Proyectos-computacion/blob/main/Readme-Pictures/DBProyecto.png)
