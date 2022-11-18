@@ -1,18 +1,3 @@
-# PROYECTO FINAL
-## Proyectos de Computación Aplicados a Ingeniería Electrónica
-
-![Image text](https://github.com/AbimaelFranco/Proyecto-django-docker-0980-Proyectos-computacion/blob/main/Readme-Pictures/ingenieria.JPG)
-
-Universidad de San Carlos de Guatemala
-
-Facultad de Ingeniería
-
-Escuela de Mecánica Eléctrica
-
-Proyectos de Computación Aplicados a Ingenieria Electrónica
-
----
-
 ### Descripción del proyecto
 
 Una zapatería antigua quiere modernizar su sistema de inventario y ventas,
